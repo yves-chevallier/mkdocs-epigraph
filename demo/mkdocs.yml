@@ -1,0 +1,6 @@
+site_name: Epigraph Demo
+site_url: https://heig-tin-info.github.io/handbook/
+site_author: Yves Chevallier
+
+plugins:
+  - epigraph
