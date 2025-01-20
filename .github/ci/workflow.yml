@@ -1,0 +1,43 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+
+    - name: Install Poetry
+      run: pip install poetry
+
+    - name: Configure Poetry for CI/CD
+      run: |
+        poetry config virtualenvs.create false
+        poetry config pypi-token.pypi ""
+
+    - name: Install dependencies
+      run: poetry install --no-dev
+
+    - name: Build package with Poetry
+      run: poetry build
+
+    - name: Publish to PyPI
+      env:
+        POETRY_PYPI_URL: https://upload.pypi.org/legacy/
+        POETRY_PYPI_TOKEN: ""
+      run: poetry publish --build --username __token__ --password ""

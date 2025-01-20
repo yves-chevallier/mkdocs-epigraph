@@ -21,6 +21,14 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.setuptools]
+packages = ["mkdocs_plugin_epigraph"]
+include_package_data = true
+
 [tool.poetry.dependencies]
 python = "^3.10"
 mkdocs = "^1.6.1"
@@ -33,7 +41,3 @@ black = "^24.10.0"
 
 [tool.poetry.plugins."mkdocs.plugins"]
 "epigraph" = "mkdocs_plugin_epigraph.plugin:EpigraphPlugin"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
