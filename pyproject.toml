@@ -21,6 +21,11 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
+[tool.poetry.urls]
+"Documentation" = "https://github.com/yves-chevallier/mkdocs-epigraph"
+"Source" = "https://github.com/yves-chevallier/mkdocs-epigraph"
+"Tracker" = "https://github.com/yves-chevallier/mkdocs-epigraph/issues"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
