@@ -25,10 +25,6 @@ classifiers = [
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.setuptools]
-packages = ["mkdocs_plugin_epigraph"]
-include_package_data = true
-
 [tool.poetry.dependencies]
 python = "^3.10"
 mkdocs = "^1.6.1"
