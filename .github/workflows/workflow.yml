@@ -38,3 +38,6 @@ jobs:
       env:
         POETRY_PYPI_URL: https://upload.pypi.org/legacy/
       run: poetry publish --build
+
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
