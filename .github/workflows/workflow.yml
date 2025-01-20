@@ -39,5 +39,4 @@ jobs:
     - name: Publish to PyPI
       env:
         POETRY_PYPI_URL: https://upload.pypi.org/legacy/
-        POETRY_PYPI_TOKEN: ""
       run: poetry publish
